@@ -14,7 +14,7 @@ class SeriesController extends Controller
             '2 homens e meio'
         ];
 
-        return view('listar-series', compact('series'));
+        return view('series.index')->with('series', $series);
     }
 
 
