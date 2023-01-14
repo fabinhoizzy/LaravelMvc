@@ -9,9 +9,10 @@
     <title>{{ $title }} - Controle de Séries</title>
 </head>
 <body>
+<div class="container">
     <h1>{{ $title }}</h1>
 
     {{ $slot }}
-
+</div>
 </body>
 </html>
