@@ -10,5 +10,4 @@ class Serie extends Model
     use HasFactory;
     protected $fillable = ['nome'];
 
-
 }
