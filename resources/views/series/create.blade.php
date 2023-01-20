@@ -23,7 +23,7 @@
             </div>
 
             <div class="col-2">
-                <label for="episodesPerSeason" class="form-label">Episodios/Temporadas</label>
+                <label for="episodesPerSeason" class="form-label">Ep: Temporadas</label>
                 <input type="text"
                        id="episodesPerSeason"
                        name="episodesPerSeason"
