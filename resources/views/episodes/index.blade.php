@@ -1,4 +1,4 @@
-<x-layout title="Episódios">
+<x-layout title="Episódios" :mensagem-sucesso="$mensagemSucesso">
 
     <form method="post">
         @csrf
@@ -19,5 +19,6 @@
 
         <button type="submit" class="btn btn-primary mt-2 mb-2">Salvar</button>
     </form>
+
 </x-layout>
 
