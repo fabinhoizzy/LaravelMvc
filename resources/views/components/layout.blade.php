@@ -9,6 +9,15 @@
     <title>{{ $title }} - Controle de Séries</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ route('series.index')}}">Minha Séries</a>
+
+        <a href="{{ route('logout') }}">Sair</a>
+    </div>
+</nav>
+
 <div class="container">
     <h1>{{ $title }}</h1>
 
