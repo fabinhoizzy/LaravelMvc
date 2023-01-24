@@ -14,7 +14,9 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('series.index')}}">Minha Séries</a>
 
+        @auth
         <a href="{{ route('logout') }}">Sair</a>
+        @endif
     </div>
 </nav>
 

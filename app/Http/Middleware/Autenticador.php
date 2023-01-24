@@ -7,7 +7,7 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Auteticador
+class Autenticador
 {
     /**
      * Handle an incoming request.
