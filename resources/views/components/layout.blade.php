@@ -14,7 +14,14 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('series.index')}}">Minha Séries</a>
 
-        <a href="{{ route('logout') }}">Sair</a>
+        @auth
+            <form action="{{ route('logout') }}" method="post">
+            @csrf
+                <button class="btn btn-link">
+                    Sair
+                </button>
+            </form>
+        @endauth
     </div>
 </nav>
 
