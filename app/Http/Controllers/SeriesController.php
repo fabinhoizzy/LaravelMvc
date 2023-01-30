@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Events\SeriesCreated;
 use App\Http\Requests\SeriesFormRequest;
-use App\Mail\SerieCreated;
 use App\Models\Series;
 use App\Models\User;
 use App\Repositories\SeriesRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
+
 
 class SeriesController extends Controller
 {
@@ -35,6 +33,10 @@ class SeriesController extends Controller
 
     public function store(SeriesFormRequest $request)
     {
+        $coverPath = $request->hasFile('cover')
+            ? $request->file('cover')->store('series_cover', 'public')
+            : null;
+        $request->coverPath = $coverPath;
 
         $serie = $this->repository->add($request);
 
@@ -45,7 +47,9 @@ class SeriesController extends Controller
             $request->episodesPerSeason,
         );
 
-        return to_route('series.index')->with('mensagem.sucesso', "Série '{$serie->nome}' adicionada com sucesso!");
+
+        return to_route('series.index')
+            ->with('mensagem.sucesso', "Série '{$serie->nome}' adicionada com sucesso!");
     }
 
     public function destroy(Series $series, Request $request)
